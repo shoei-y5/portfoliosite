@@ -1,0 +1,1042 @@
+@charset "UTF-8";
+ul {
+  display: flex;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  font-family: "BIZ UDMincho", serif;
+}
+
+button {
+  background-color: #01526B;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5625rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.3125rem;
+  width: 10rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/********************************************************
+ *  PC／モバイル 共通スタイル
+ ********************************************************/
+header {
+  /* 背景や高さなど、ヘッダー共通のレイアウト */
+  background-color: #F8DB67;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 3.75rem;
+  position: relative;
+  /* ---- サイトタイトル ---- */
+  /* ---- PC用ナビゲーション ---- */
+  /* ---- PC版の “お問い合わせ” ボタン ---- */
+  /* ---- ハンバーガーアイコン（モバイル用）---- */
+  /* ---- スライドメニュー（モバイル用）---- */
+  /* PC用ナビは表示 */
+}
+header .site-title {
+  color: rgb(0, 0, 0);
+  opacity: 0.6;
+  font-family: "Island Moments";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 140px;
+}
+header .site-title a {
+  display: inline-block;
+}
+header .site-title img {
+  /* 必要に応じて調整 */
+  max-height: 2.5rem;
+}
+header .desktop-nav {
+  /* PC時のみ表示。モバイル時は後述のメディアクエリで非表示 */
+}
+header .desktop-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header .desktop-nav ul li a {
+  color: #000;
+  text-decoration: none;
+}
+header .header-right .contact-link {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 182px;
+  height: 52px;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #01526B;
+  color: #fff;
+  border-radius: 0px 0px 0px 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Hiragino Kaku Gothic Pro";
+  line-height: 160%;
+  /* 25.6px */
+  letter-spacing: 2.88px;
+}
+header .header-right .contact-link:hover {
+  background-color: #003550;
+}
+header .menu-toggle {
+  display: none;
+  /* PCでは非表示。後述メディアクエリで表示 */
+  cursor: pointer;
+  position: relative;
+  z-index: 2000;
+  width: 30px;
+  height: 24px;
+  /* アイコンが“open”状態になったときの線の変化例 */
+}
+header .menu-toggle .bar {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  margin: 0.3rem 0;
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+header .menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(5px) rotate(-45deg);
+}
+header .menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+header .menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(45deg);
+}
+header .slide-menu {
+  /* PCでは非表示。後述メディアクエリでdisplay切り替え */
+  display: none;
+  /* “open”クラスが付いたときにスライドイン */
+}
+header .slide-menu .menu-title {
+  color: #fff;
+  font-family: "BIZ UDPMincho";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 28.8px */
+  letter-spacing: 4.8px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+header .slide-menu .menu-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #80622F 0%, #E6B055 100%);
+  z-index: -1;
+}
+header .slide-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 1rem;
+  padding-top: 68px;
+}
+header .slide-menu ul li {
+  margin-bottom: 1rem;
+}
+header .slide-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+header .slide-menu ul li a:hover {
+  opacity: 0.8;
+}
+header .slide-menu.open {
+  left: 0;
+}
+header .menu-toggle {
+  display: none;
+}
+header .slide-menu {
+  display: none;
+}
+header .desktop-nav {
+  display: block;
+}
+header .header-right {
+  display: block;
+}
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.section-title h2 {
+  margin-bottom: 10px;
+  color: #BB913C;
+  text-align: center;
+  font-family: "Island Moments";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 43.2px */
+  letter-spacing: 7.2px;
+}
+.section-title p {
+  font-size: 1.25rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.section-title p::before, .section-title p::after {
+  content: "";
+  width: 80px;
+  height: 2px;
+  display: block;
+}
+.section-title p::before {
+  background: linear-gradient(to right, rgb(187, 145, 60) 0%, rgba(187, 145, 60, 0) 100%);
+  margin-right: 20px;
+}
+.section-title p::after {
+  background: linear-gradient(to left, rgb(187, 145, 60) 0%, rgba(187, 145, 60, 0) 100%);
+  margin-left: 20px;
+}
+
+.color-1 {
+  background: linear-gradient(180deg, #F8DB67 0%, #FFBC59 28.5%, #FFF7E8 51.5%);
+}
+
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem;
+}
+#hero .main-visual {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+#hero .main-visual .flower {
+  width: 29.375rem;
+  height: 37.8125rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: 0;
+}
+#hero .main-visual .main-message {
+  position: absolute;
+  left: 25vw;
+  top: 3vh;
+  font-size: 1.5rem;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 400;
+  z-index: 3;
+  letter-spacing: 4px;
+  /* 「心」を大きくする */
+  /* 改行後の文字を1文字分下げる */
+}
+#hero .main-visual .main-message .big-text {
+  font-size: 3rem;
+  font-weight: bold;
+}
+#hero .main-visual .main-message .indented-text {
+  display: block;
+  margin-top: 2rem;
+  /* 字下げ */
+}
+#hero .main-visual .main-message .fade-char {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s forwards ease-out;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#hero .mock-container {
+  position: relative;
+  width: 80vw;
+  max-width: 1280px;
+  height: 500px;
+}
+#hero .mock-container .mock-up {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 12vh;
+  right: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#hero .mock-container .mock-up .fade-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+#hero .mock-container .mock-up .fade-img.active {
+  opacity: 1;
+}
+#hero .mock-container .web-coder {
+  position: absolute;
+  top: 47vh;
+  right: 14vw;
+  height: auto;
+  z-index: 2;
+}
+
+#about {
+  height: 37.5rem;
+  position: relative;
+}
+#about .myname .name {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+#about .myname .introduction {
+  font-size: 0.875rem;
+  text-align: center;
+}
+#about .coding-feeling {
+  margin: 5.625rem 18.75rem 0 18.75rem;
+  z-index: 5;
+}
+#about .coding-feeling p {
+  margin-bottom: 0.875rem;
+  color: #3E3D3D;
+  font-family: "BIZ UDPMincho";
+  font-size: 0.875rem;
+  line-height: 140%;
+  letter-spacing: 0.2275rem;
+  margin-top: 0.4375rem;
+}
+#about .word {
+  position: absolute;
+  top: 50vh;
+  right: 10vw;
+  transform: translateY(-50%);
+  height: auto;
+  z-index: 0;
+}
+
+#works {
+  background: linear-gradient(180deg, #FFF7E8 0%, #F8DB67 14.5%, #F8DB67 79.5%, #FFF7E8 100%);
+  padding-top: 6.25rem;
+}
+#works .works-list {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  margin-bottom: 3.375rem;
+}
+#works .works-list .item {
+  display: flex;
+  width: 20.625rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-family: "Noto Sans";
+}
+#works .works-list .item p {
+  margin: 0;
+}
+#works .works-list .item img {
+  height: 11.1875rem;
+}
+#works .works-list .item .category {
+  display: flex;
+  gap: 2.125rem;
+}
+#works .works-list .item .category p {
+  display: flex;
+  padding: 0.25rem 0.6875rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0.3125rem;
+}
+#works .button {
+  display: flex;
+  width: 20.9375rem;
+  height: 3.125rem;
+  margin: 0 auto;
+  padding: 0.625rem 1rem;
+  align-items: center;
+  gap: 0.625rem;
+}
+#works .button:hover {
+  opacity: 0.9;
+}
+
+#service {
+  background: #FFF7E8;
+  padding-top: 50px;
+}
+#service .section-title {
+  margin-bottom: 3.9375rem;
+}
+#service .service-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9375rem;
+}
+#service .service-list .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Noto Sans";
+}
+
+#skill {
+  background: #FFF7E8;
+  height: 31.25rem;
+  background-image: url(../img/line_smooth\ 2.png);
+  justify-items: center;
+  padding-top: 6.25rem;
+}
+#skill ul {
+  display: flex;
+  gap: 0.9375rem;
+}
+#skill ul li {
+  display: flex;
+  padding: 0.375rem 0.9375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.3125rem;
+  background: #BB913C;
+  color: #fff;
+  font-family: "DIN Alternate";
+}
+#skill a {
+  display: flex;
+  width: 19.75rem;
+  height: 3.1875rem;
+  padding: 0.625rem 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  margin-top: 6.25rem;
+}
+#skill a:hover {
+  opacity: 0.9;
+}
+
+#thoughts {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #F8DB67 0%, #FFBC59 100%);
+  overflow: hidden;
+}
+#thoughts .thoughts ::before {
+  content: "";
+  position: absolute;
+  background: url(../img/path.svg) no-repeat center top/contain;
+  width: 100vw;
+  height: 35vh;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#thoughts .content {
+  position: relative;
+  z-index: 2;
+  max-width: 56.25rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+#thoughts .content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+#thoughts h1 {
+  display: inline-flex;
+  height: 2.13rem;
+  padding: 0.3125rem 0.3125rem 0.3125rem 0.6875rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4375rem;
+  flex-shrink: 0;
+  border-left: 0.25rem solid #BB913C;
+  margin-bottom: 3.125rem;
+}
+#thoughts .text-group {
+  margin-bottom: 1.5625rem;
+}
+#thoughts h2 {
+  color: #000;
+  font-family: "BIZ UDPMincho";
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.175rem;
+  margin-bottom: 0.9375rem;
+}
+#thoughts p {
+  color: #000;
+  font-family: "BIZ UDPMincho";
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.15rem;
+}
+#thoughts img {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: 22.5rem;
+  height: auto;
+  z-index: 3;
+}
+
+#contact {
+  background-color: #FFBC59;
+  color: #000;
+  padding: 0 10px 100px 10px;
+  text-align: center;
+}
+#contact .contact-container {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+#contact .contact-container .section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+#contact .contact-container .section-title h2 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+#contact .contact-container .section-title p {
+  font-size: 1.25rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#contact .contact-container .section-title p::before, #contact .contact-container .section-title p::after {
+  content: "";
+  width: 80px;
+  height: 2px;
+  display: block;
+}
+#contact .contact-container .section-title p::before {
+  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(187, 145, 60, 0) 100%);
+  margin-right: 20px;
+}
+#contact .contact-container .section-title p::after {
+  background: linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(187, 145, 60, 0) 100%);
+  margin-left: 20px;
+}
+#contact .contact-container p {
+  color: #000;
+  text-align: center;
+  font-family: "BIZ UDPMincho";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 16.8px */
+  letter-spacing: 3.5px;
+  padding-bottom: 50px;
+}
+#contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#contact form .form-group {
+  width: 80%;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+#contact form .form-group label {
+  font-size: 0.875rem;
+  display: block;
+  margin-bottom: 0.3125rem;
+}
+#contact form .form-group input,
+#contact form .form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.3125rem;
+  font-size: 0.875rem;
+}
+#contact form .form-group textarea {
+  resize: vertical;
+  min-height: 6.25rem;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+#contact form .checkbox-group {
+  margin-bottom: 14px;
+}
+#contact form .checkbox-group .check-wrapper {
+  width: 100%;
+  /* PCデフォルト: 2列のグリッド */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  /* 5つの .checkbox-item を上から順番に左右・左右... と並べる */
+}
+#contact form .checkbox-group .check-wrapper .checkbox-item {
+  display: flex;
+  align-items: center;
+}
+#contact form .checkbox-group .check-wrapper .checkbox-item input[type=checkbox] {
+  margin-right: 0.5rem;
+  width: 20px;
+  height: 20px;
+}
+#contact form .check-3 .form-group {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+#contact form .check-3 .form-group label {
+  width: 5rem;
+}
+#contact form .check-3 .form-group input[type=number] {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+#contact form .check-3 .form-group p {
+  font-size: 1rem;
+  color: #333;
+  padding: 0;
+}
+#contact form button {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.75rem 1.5625rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 0.3125rem;
+  background: #01526B;
+}
+#contact form button:hover {
+  opacity: 0.8;
+}
+
+footer {
+  background-color: #694848;
+  color: #fff;
+}
+footer div {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.75rem;
+}
+footer div .logo {
+  width: 12.8125rem;
+  height: 14.1875rem;
+  flex-shrink: 0;
+}
+footer div ul {
+  flex-direction: column;
+  margin-left: 35px;
+}
+footer div ul li {
+  padding-bottom: 0.3125rem;
+}
+footer a {
+  color: #fff;
+}
+footer p {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+@media screen and (max-width: 980px) {
+  header .site-title {
+    margin: 0 auto;
+    padding-left: 0;
+  }
+  header .menu-toggle {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    z-index: 9999;
+  }
+  header .menu-toggle .bar {
+    display: block;
+    width: 1.875rem;
+    height: 2px;
+    margin: 0.3125rem 0;
+    background-color: #000;
+    transition: all 0.3s ease;
+  }
+  header .desktop-nav {
+    display: none;
+  }
+  header .header-right {
+    display: none;
+  }
+  header .slide-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: -350px;
+    width: 300px;
+    background: linear-gradient(90deg, #E6B055 0%, #80622F 100%);
+    height: 100vh;
+    padding-top: 5rem;
+    padding-left: 2rem;
+    z-index: 1000;
+    transition: transform 0.8s ease;
+    gap: 16px;
+  }
+  header .slide-menu ul {
+    flex-direction: column;
+  }
+  header .slide-menu ul li a {
+    color: #000;
+  }
+  header .slide-menu .open {
+    transform: translateX(300px);
+  }
+  header .menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg);
+    position: relative;
+    background-color: #fff;
+  }
+  header .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  header .menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg);
+    position: relative;
+    background-color: #fff;
+  }
+  #hero .main-visual .mock-container {
+    display: none;
+  }
+  #about {
+    height: 800px;
+  }
+  #about .coding-feeling {
+    margin: 24px 100px 0 100px;
+  }
+  #works .works-list {
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 2.8px;
+  }
+  #service .service-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  #service .service-list .item {
+    margin-bottom: 50px;
+  }
+  #thoughts .thoughts .thoughts ::before {
+    background: url(../img/path_sp.svg);
+    height: 120px;
+    top: -30px;
+    width: 96vw;
+    top: 196vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  #hero .main-visual .flower {
+    width: 284px;
+    height: 366px;
+  }
+  #hero .main-visual .main-message {
+    left: auto;
+    font-size: 12px;
+  }
+  #hero .main-visual .main-message .big-text {
+    font-size: 36px;
+  }
+  #hero .main-visual .mock-container {
+    display: block;
+  }
+  #hero .main-visual .mock-container .mock-up {
+    width: 65vw;
+    right: -6vw;
+    top: 12vh;
+  }
+  #hero .main-visual .mock-container .web-coder {
+    top: 27vh;
+    right: -5vw;
+    width: 21vw;
+  }
+  #about {
+    height: 600px;
+  }
+  #about .section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  #about .section-title h2 {
+    margin-bottom: 10px;
+    color: #BB913C;
+    text-align: center;
+    font-family: "Island Moments";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 43.2px */
+    letter-spacing: 7.2px;
+  }
+  #about .section-title p {
+    font-size: 1.25rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  #about .section-title p::before, #about .section-title p::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    display: block;
+  }
+  #about .section-title p::before {
+    background: linear-gradient(to right, rgb(187, 145, 60) 0%, rgba(187, 145, 60, 0) 100%);
+    margin-right: 20px;
+  }
+  #about .section-title p::after {
+    background: linear-gradient(to left, rgb(187, 145, 60) 0%, rgba(187, 145, 60, 0) 100%);
+    margin-left: 20px;
+  }
+  #about .coding-feeling {
+    margin: 24px 22px 0 22px;
+  }
+  #works .works-list {
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 2.8px;
+  }
+  #service {
+    padding-top: 78px;
+  }
+  #service .service-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  #service .service-list .item {
+    margin-bottom: 50px;
+  }
+  #skill {
+    background-image: url(../img/line_smooth_sp.png);
+    background-repeat: no-repeat;
+    background-position: center 140px;
+    /* 左右はcenterで、上下方向に40px下げる */
+  }
+  #thoughts .thoughts ::before {
+    background: url(../img/path_sp.svg) no-repeat center top/cover;
+    top: -15px;
+    height: 3vh;
+  }
+  #thoughts img {
+    width: 208px;
+    height: 217px;
+    top: 12vh;
+    right: 0vw;
+  }
+  #contact .contact-container .section-title p::before, #contact .contact-container .section-title p::after {
+    width: 50px;
+  }
+  #contact form .form-group {
+    width: 337px;
+    font-size: 0.875rem;
+  }
+  #contact form .checkbox-group {
+    /* 2列構成、任意の列間・行間を設定 */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    row-gap: 1rem;
+    grid-auto-flow: row;
+    /* ↑ 自動配置のルール。明示的に行優先で詰めていくように設定 */
+    /* 以下で、各nth-childに「どの行に置くか」「どの列に置くか」を指定 */
+  }
+  #contact form .checkbox-group .checkbox-item:nth-child(1) {
+    grid-column: 1;
+    /* 1列目 */
+    grid-row: 1;
+    /* 1行目 */
+  }
+  #contact form .checkbox-group .checkbox-item:nth-child(2) {
+    grid-column: 2;
+    /* 2列目 */
+    grid-row: 1;
+    /* 1行目 */
+  }
+  #contact form .checkbox-group .checkbox-item:nth-child(3) {
+    grid-column: 1/span 2;
+    /* 1→2列目ぶち抜き */
+    grid-row: 2;
+    /* 2行目 */
+  }
+  #contact form .checkbox-group .checkbox-item:nth-child(4) {
+    grid-column: 1;
+    /* 1列目 */
+    grid-row: 3;
+    /* 3行目 */
+  }
+  #contact form .checkbox-group .checkbox-item:nth-child(5) {
+    grid-column: 2;
+    /* 2列目 */
+    grid-row: 3;
+    /* 3行目 */
+  }
+  #contact form .checkbox-group .check-wrapper {
+    width: 337px;
+    font-size: 0.875rem;
+  }
+  footer div .logo {
+    width: 11.5rem;
+    height: 12.6875rem;
+    flex-shrink: 0;
+  }
+  footer div ul {
+    margin-left: 0;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2.4px;
+  }
+}
+#works-all {
+  padding-bottom: 100px;
+  background: linear-gradient(180deg, #FFF7E8 0%, #F8DB67 14.5%, #F8DB67 79.5%, #FFF7E8 100%);
+  padding-top: 6.25rem;
+}
+#works-all .all-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* PCでは3列 */
+  gap: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-bottom: 80px;
+  margin: 0 auto;
+}
+#works-all .item {
+  background-color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  font-family: "Noto Sans";
+  padding: 10px;
+  border-radius: 5px;
+}
+#works-all .item img {
+  margin: 0 auto;
+}
+#works-all .item p {
+  padding-bottom: 5px;
+}
+#works-all .item .category {
+  display: flex;
+  gap: 2.125rem;
+}
+#works-all .item .category p {
+  display: flex;
+  padding: 0.25rem 0.6875rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0.3125rem;
+}
+#works-all .button {
+  display: flex;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 20px auto;
+  background-color: #003550;
+  color: #fff;
+  border-radius: 5px;
+  padding: 15px 40px;
+  border: 2px solid #fff;
+}
+#works-all .button:hover {
+  opacity: 0.7;
+}
+@media screen and (max-width: 980px) {
+  #works-all .all-list {
+    grid-template-columns: 1fr; /* スマホでは1列 */
+  }
+}/*# sourceMappingURL=style.css.map */
